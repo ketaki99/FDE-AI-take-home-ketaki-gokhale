@@ -116,7 +116,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-4. Optional: add `OPENAI_API_KEY` to `.env` if you want LLM-based answer synthesis. If you leave it blank, the server uses a local extractive fallback.
+4. Add `OPENAI_API_KEY` to `.env` if you want LLM-based answer synthesis. If you leave it blank, the server uses a local extractive fallback.
 
 ## Build The Index
 
