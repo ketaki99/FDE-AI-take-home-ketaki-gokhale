@@ -138,8 +138,6 @@ To test the `list_documents` tool through the same client:
 python3 -m src.client list
 ```
 
-This is useful in a take-home because it demonstrates that the server works as an MCP server, not only as imported Python functions.
-
 ## MCP Tools
 
 ### `query_documents(question: str) -> dict`
