@@ -1,6 +1,6 @@
 # Local PDF QA MCP Server
 
-This project is a small local Python application for a take-home assignment. It ingests PDF files from `pdfs/`, extracts and chunks their text, builds a local FAISS vector index, and exposes two MCP tools:
+This project is a small local Python application. It ingests PDF files from `pdfs/`, extracts and chunks their text, builds a local FAISS vector index, and exposes two MCP tools:
 
 - `query_documents(question: str)` to answer questions using the indexed PDFs with source attribution
 - `list_documents()` to list the indexed PDF files
