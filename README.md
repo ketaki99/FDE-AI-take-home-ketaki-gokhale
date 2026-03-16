@@ -74,25 +74,25 @@ The design is intentionally simple and modular:
 
 ## Design Choices And Tradeoffs
 
-- **FastMCP over the official MCP Python SDK**
+- **FastMCP over the official MCP Python SDK:**
   I chose FastMCP because it provides a higher-level, more ergonomic abstraction for building MCP servers in Python. FastMCP automatically handles tool schemas, validation, documentation, transport negotiation, and parts of the protocol lifecycle, which let me focus on the document ingestion and retrieval logic rather than lower-level MCP plumbing. The FastMCP project also notes that FastMCP 1.0 was incorporated into the official MCP Python SDK in 2024, so using FastMCP still aligns with the broader MCP ecosystem while giving a simpler developer experience.
 
-- **FAISS over Chroma**
+- **FAISS over Chroma:**
   FAISS was chosen to keep the dependency surface smaller and the retrieval path easier to reason about. Since the dataset is small and runs locally, an in-memory vector index is sufficient and avoids introducing additional database infrastructure.
 
-- **Character-based chunking**
+- **Character-based chunking:**
   Chunking is character-based rather than token-based to keep the ingestion pipeline model-agnostic and avoid introducing tokenizer dependencies. Since retrieval operates on embeddings and the prompt only includes a small number of chunks, approximate character-length segmentation provides a good balance between simplicity and retrieval quality.
 
-- **Pluggable answer generation layer**
+- **Pluggable answer generation layer:**
   The answer generation layer is designed to be pluggable so the system can run locally without requiring cloud credentials. This allows switching between local models and hosted APIs without changing the retrieval pipeline.
 
-- **Minimum similarity threshold**
+- **Minimum similarity threshold:**
   A minimum similarity score filter is used to prevent unsupported answers. If no retrieved chunks exceed the threshold, the tool returns that the documents do not contain sufficient information.
 
-- **Metadata preservation for source attribution**
+- **Metadata preservation for source attribution:**
   Document name and page number metadata are preserved throughout the parsing and chunking pipeline so answers can include precise source citations.
 
-- **Separation of ingestion and querying logic**
+- **Separation of ingestion and querying logic:**
   Document parsing, embedding generation, retrieval, and answer generation are implemented as separate modules. This keeps responsibilities clear and makes the system easier to extend or debug.
 
 ## Setup
