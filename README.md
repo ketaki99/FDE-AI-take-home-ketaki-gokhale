@@ -38,6 +38,11 @@ project/
     utils.py
 ```
 
+## Assumptions Made
+
+1. The source data folder contained 200+ files, so I selected 4 PDFs from it to use as the working document set for this local take-home implementation.
+2. PDFs are ingested on demand through the ingestion step and are not automatically indexed when the MCP server starts.
+
 ## Architecture Overview
 
 The design is intentionally simple and modular:
@@ -311,4 +316,3 @@ I think AI coding tools fit very naturally into a forward-deployed engineering w
 They also help developers concentrate more on prioritizing the features that actually matter, rather than spending time on repetitive implementation details. This can be particularly valuable in forward-deployed contexts where the goal is often to deliver working solutions quickly and adapt them based on real-world feedback.
 
 At the same time, they work best when treated as assistive tools rather than decision-makers. The engineer still needs to define the architecture, evaluate trade-offs, verify correctness, and ensure the system behaves reliably. In this assignment, AI was most effective when I used it to speed up implementation after I had already decided on the overall approach.
-
