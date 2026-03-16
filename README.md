@@ -165,103 +165,98 @@ Returns the list of indexed PDF filenames.
 
 ## Sample Questions And Answers
 
+Note: these sample responses were originally returned as structured JSON by the
+tool, but they are reformatted here for readability in the README.
+
 ### Question
 
 `What are two different NLP tasks that involve detecting entities or information in text, and how are they evaluated?`
 
-### Response
+### Answer
 
-```json
-{
-  "answer": "Two such tasks are:\n\n1. Named Entity Recognition (NER): detects named entities in text, such as people, companies, facilities, bands, sports teams, movies, and TV shows. The provided context describes the task and its challenges, but does not state how it is evaluated.\n\n2. Entity Linking: identifies entity mentions in text and links them to entities such as Wikipedia articles. The context describes annotating documents with entity mentions and links, but does not state how it is evaluated.",
-  "sources": [
-    {
-      "document": "C18-1182.pdf",
-      "page": 3
-    },
-    {
-      "document": "C18-1182.pdf",
-      "page": 10
-    },
-    {
-      "document": "P19-1598.pdf",
-      "page": 4
-    },
-    {
-      "document": "P19-1598.pdf",
-      "page": 8
-    },
-    {
-      "document": "D18-1003.pdf",
-      "page": 10
-    }
-  ]
-}
-```
+Two such tasks are:
+
+1. Named Entity Recognition (NER): detects named entities in text, such as
+   people, companies, facilities, bands, sports teams, movies, and TV shows.
+   The provided context describes the task and its challenges, but does not
+   state how it is evaluated.
+2. Entity Linking: identifies entity mentions in text and links them to
+   entities such as Wikipedia articles. The context describes annotating
+   documents with entity mentions and links, but does not state how it is
+   evaluated.
+
+### Sources
+
+- `C18-1182.pdf`, page 3
+- `C18-1182.pdf`, page 10
+- `P19-1598.pdf`, page 4
+- `P19-1598.pdf`, page 8
+- `D18-1003.pdf`, page 10
 
 ### Question
 
 `How do neural architectures reduce the need for manual feature engineering in NLP tasks? Give examples from two different models.`
 
-### Response
+### Answer
 
-```json
-{
-  "answer": "Neural architectures reduce manual feature engineering by learning useful representations directly from data instead of relying on hand-crafted features such as gazetteers, orthographic rules, or in-domain knowledge. In NER, the survey contrasts classic feature-engineered systems with neural models based on minimal feature engineering and notes that neural systems improved results without any external resources or feature engineering.\n\nTwo examples:\n1. Word-level RNN model: words in a sentence are fed into a recurrent neural network, and each word is represented by its word embedding. This lets the model learn task-relevant word features automatically from embeddings and sequence context rather than manually designed features.\n2. Character+word hybrid neural models: these use both word representations and character or other sub-word units. The survey concludes that these feature-inferring neural network models generally outperform feature-engineered models, because they can infer morphological and sub-word patterns automatically instead of requiring hand-built affix or orthographic features.",
-  "sources": [
-    {
-      "document": "C18-1182.pdf",
-      "page": 1
-    },
-    {
-      "document": "P19-1598.pdf",
-      "page": 10
-    },
-    {
-      "document": "C18-1182.pdf",
-      "page": 5
-    },
-    {
-      "document": "C18-1182.pdf",
-      "page": 10
-    }
-  ]
-}
-```
+Neural architectures reduce manual feature engineering by learning useful
+representations directly from data instead of relying on hand-crafted features
+such as gazetteers, orthographic rules, or in-domain knowledge. In NER, the
+survey contrasts classic feature-engineered systems with neural models based on
+minimal feature engineering and notes that neural systems improved results
+without any external resources or feature engineering.
+
+Two examples:
+
+1. Word-level RNN model: words in a sentence are fed into a recurrent neural
+   network, and each word is represented by its word embedding. This lets the
+   model learn task-relevant word features automatically from embeddings and
+   sequence context rather than manually designed features.
+2. Character+word hybrid neural models: these use both word representations and
+   character or other sub-word units. The survey concludes that these
+   feature-inferring neural network models generally outperform
+   feature-engineered models, because they can infer morphological and sub-word
+   patterns automatically instead of requiring hand-built affix or orthographic
+   features.
+
+### Sources
+
+- `C18-1182.pdf`, page 1
+- `P19-1598.pdf`, page 10
+- `C18-1182.pdf`, page 5
+- `C18-1182.pdf`, page 10
 
 ### Question
 
 `How do datasets differ across tasks like Named Entity Recognition, fake news detection, and aggression detection?`
 
-### Response
+### Answer
 
-```json
-{
-  "answer": "The datasets differ by task in label structure, size, language, and context:\n\n- Named Entity Recognition: the provided context does not contain information about NER datasets, so this is not supported.\n- Fake news detection: the context mentions a benchmark dataset for fake news detection (LIAR) and also a rumor-related setup with two subtasks: a closed variant using only the questionable tweet, and an open variant using the tweet plus extra context such as retrieved sources, a Wikipedia snapshot, news articles, and preceding tweets. The development and test sets are small, with 25/28 source tweets and 256/1021 reply tweets.\n- Aggression detection: the dataset is labeled into three classes: Overtly Aggressive (OAG), Covertly Aggressive (CAG), and Non-Aggressive (NAG). It includes multilingual data (English and Hindi), with 916 English and 970 Hindi test comments, plus surprise Twitter sets of 1,257 English and 1,194 Hindi tweets. It also has noted issues such as code-mixed and other-language content, and some systems augmented it with external toxicity or hate-speech data.",
-  "sources": [
-    {
-      "document": "W18-4401.pdf",
-      "page": 3
-    },
-    {
-      "document": "W18-4401.pdf",
-      "page": 5
-    },
-    {
-      "document": "D18-1003.pdf",
-      "page": 11
-    },
-    {
-      "document": "W18-4401.pdf",
-      "page": 6
-    },
-    {
-      "document": "D18-1003.pdf",
-      "page": 5
-    }
-  ]
-}
-```
+The datasets differ by task in label structure, size, language, and context:
+
+- Named Entity Recognition: the provided context does not contain information
+  about NER datasets, so this is not supported.
+- Fake news detection: the context mentions a benchmark dataset for fake news
+  detection (LIAR) and also a rumor-related setup with two subtasks: a closed
+  variant using only the questionable tweet, and an open variant using the
+  tweet plus extra context such as retrieved sources, a Wikipedia snapshot,
+  news articles, and preceding tweets. The development and test sets are small,
+  with 25/28 source tweets and 256/1021 reply tweets.
+- Aggression detection: the dataset is labeled into three classes: Overtly
+  Aggressive (OAG), Covertly Aggressive (CAG), and Non-Aggressive (NAG). It
+  includes multilingual data (English and Hindi), with 916 English and 970
+  Hindi test comments, plus surprise Twitter sets of 1,257 English and 1,194
+  Hindi tweets. It also has noted issues such as code-mixed and other-language
+  content, and some systems augmented it with external toxicity or hate-speech
+  data.
+
+### Sources
+
+- `W18-4401.pdf`, page 3
+- `W18-4401.pdf`, page 5
+- `D18-1003.pdf`, page 11
+- `W18-4401.pdf`, page 6
+- `D18-1003.pdf`, page 5
 
 ## Other Ways To Test The Query Tool
 
