@@ -184,7 +184,7 @@ Returns the list of indexed PDF filenames.
 
 Note: these sample responses are reformatted here for readability. The original
 JSON versions can be found in
-[`question_answer_examples.txt`](/Users/ketakigokhale/take-home-nexla/question_answer_examples.txt).
+[`question_answer_examples.txt`](question_answer_examples.txt).
 
 ### Question
 
